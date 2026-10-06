@@ -1,0 +1,2 @@
+id,name,model_id,group_id/id,operation,domain
+access_image_export_api_log_system,image.export.api.log.system,image.export.api.log,base.group_system,crud,

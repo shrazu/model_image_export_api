@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="image_export_api_log_view_list" model="ir.ui.view">
+        <field name="name">image.export.api.log.list</field>
+        <field name="model">image.export.api.log</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0">
+                <field name="export_date"/>
+                <field name="model"/>
+                <field name="res_id"/>
+                <field name="record_name"/>
+                <field name="field_name"/>
+                <field name="filename"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="image_export_api_log_view_search" model="ir.ui.view">
+        <field name="name">image.export.api.log.search</field>
+        <field name="model">image.export.api.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="record_name"/>
+                <field name="model"/>
+                <field name="filename"/>
+                <group>
+                    <filter name="group_by_model" string="Model" context="{'group_by': 'model'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="image_export_api_log_action" model="ir.actions.act_window">
+        <field name="name">Images Exported by API</field>
+        <field name="res_model">image.export.api.log</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem id="menu_image_export_api" name="Image Export API" parent="base.menu_custom" sequence="201">
+        <menuitem id="menu_image_export_api_log" action="image_export_api_log_action" sequence="10"/>
+    </menuitem>
+</odoo>

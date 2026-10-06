@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="model_image_export_api_base_path" model="ir.config_parameter">
+        <field name="key">model_image_export_api.base_path</field>
+        <field name="value">/opt/odoo/photos</field>
+    </record>
+</odoo>
